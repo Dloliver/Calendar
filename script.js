@@ -18,7 +18,7 @@ function openModal(date) {
     newEventModal.style.display = 'block';
   }
 
-  backDrop.style.display = 'block'
+  backDrop.style.display = 'block';
 }
 
 
@@ -57,7 +57,7 @@ function load() {
     if (i > paddingDays) {
       daySquare.innerText = i - paddingDays;
 
-      daySquare.addEventListener('click', () => console.log('click'));
+      daySquare.addEventListener('click', () => openModal(`${month + 1}/${i - paddingDays}/${year}`));
     } else {
       daySquare.classList.add('padding');
     }
@@ -76,6 +76,9 @@ function initButtons() {
     nav--;
     load()
   });
+
+  document.getElementById('saveButton', () => {});
+  document.getElementById('saveButton', () => {});
 
 }
 initButtons()
