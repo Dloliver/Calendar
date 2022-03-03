@@ -4,6 +4,7 @@ let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('e
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
+const backDrop = document.getElementById('modalBackDrop');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 function openModal(date) {
@@ -14,8 +15,10 @@ function openModal(date) {
   if (eventForDay) {
     console.log('Event already exist');
   } else {
-
+    newEventModal.style.display = 'block';
   }
+
+  backDrop.style.display = 'block'
 }
 
 
