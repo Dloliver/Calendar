@@ -3,7 +3,21 @@ let clicked = null;
 let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
+const newEventModal = document.getElementById('newEventModal');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function openModal(date) {
+  clicked = date;
+
+  const eventForDay = events.find(e => e.date === clicked);
+
+  if (eventForDay) {
+    console.log('Event already exist');
+  } else {
+
+  }
+}
+
 
 function load() {
   const dt = new Date();
