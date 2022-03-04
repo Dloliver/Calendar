@@ -6,6 +6,7 @@ const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const eventTitleInput = document.getElementById('eventTitleInput')
 
 function openModal(date) {
   clicked = date;
@@ -66,6 +67,14 @@ function load() {
   }
 }
 
+function closeModal() {
+  newEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  load();
+}
+
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
     nav++;
@@ -78,7 +87,7 @@ function initButtons() {
   });
 
   document.getElementById('saveButton', () => {});
-  document.getElementById('saveButton', () => {});
+  document.getElementById('cancelButton', closeModal);
 
 }
 initButtons()
